@@ -16,17 +16,3 @@ class AuthorOrReadOnly(permissions.BasePermission):
             return True
         else:
             return False
-
-
-class UserOrIsauthenticated(permissions.BasePermission):
-
-    def has_permission(self, request, view):
-        return (request.user.is_authenticated)
-
-    def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        elif obj.user == request.user:
-            return True
-        else:
-            return False
