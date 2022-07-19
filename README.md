@@ -3,72 +3,74 @@
 ## Yandex Practicum. Python backend developer.
 
 ### About Yatube:
-Yatube — is a social network. Пользователи пишут, читают и комментируют статьи. Users write, read and comment on articles. It is possible to subscribe to your favorite author. Mechanisms for registration, authentication, reset and password recovery are implemented.
+Yatube — is a social network. Users write, read and comment on articles. It is possible to subscribe to your favorite author. Mechanisms for registration, authentication, reset and password recovery are implemented.
 
 
 ### Description of the API project:
-API Yatube создан для взаимодействия с основными функциями сервиса:
+API Yatube was created to interact with the main functions of the service:
 
-1. аутентификация пользователей — получение / создание / изменение / удаление публикаций
-1. получение / создание / изменение / удаление комментариев
-1. подписка на автора
+1. user authentication - getting / creating / changing / deleting publications
+2. getting / creating / changing / deleting comments
+3. subscription to the author
 
-#### Примеры запросов:
-Получение списка постов:
+#### Request examples:
+Receive list of the posts:
 ```
 GET http://127.0.0.1:8000/api/v1/posts/
 content-type: application/json
 ```
 
-Создание поста:
+Create post:
 ```
 GET http://127.0.0.1:8000/api/v1/posts/
 content-type: application/json
 Authorization: Bearer <токен>
 ```
 
+Receive JWT-token:
+
 ```
-Получение JWT-токена:
 
 POST http://127.0.0.1:8000/api/jwt/create/
 content-type: application/json
 
 {
-    "username": "<логин>",
-    "password": "<пароль>"
+    "username": "<login>",
+    "password": "<password>"
 }
 ```
-Подробный список всех запросов и примеры ответов в техническом задании (см. ниже)
+A detailed list of all requests and examples of answers in the terms of reference (see below)
 
-### Техническое задание:
+### Specification:
 http://127.0.0.1:8000/redoc
-* p.s. Ссылка активна только при запущенном сервере. Инструкция по запуску ниже.
+* p.s. The link is active only when the local server is running. Start instructions below.
 
-### Используемые технологии::
+### Used technologies:
 * Django REST Framework
 * Simple-JWT
-### Как запустить проект:
-Клонировать репозиторий и перейти в него в командной строке:
+
+### How to start the project:
+Clone repository:
 
 ```
-git clone <ссылка>
+git clone <link>
 ```
-Cоздать и активировать виртуальное окружение:
+Create and activate virtual environment:
 ```
 python -m venv env
 ```
 
-Установить зависимости из файла requirements.txt:
+Install requirements from requirements.txt:
 ```
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-Выполнить миграции:
+Run migrations:
 ```
 python manage.py migrate
 ```
-Запустить проект:
+Run local server:
 ```
 python manage.py runserver
 ```
-Дмитрий Кирсанов
+Dmitrii Kirsanov
