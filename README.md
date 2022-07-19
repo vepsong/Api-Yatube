@@ -26,15 +26,18 @@ content-type: application/json
 Authorization: Bearer <токен>
 ```
 
+Изменение пользователем информации о себе:
 ```
-Получение JWT-токена:
 
-POST http://127.0.0.1:8000/api/jwt/create/
+PATCH http://127.0.0.1:8000/api/v1/users/me/
 content-type: application/json
+Authorization: Bearer ХХХ
 
 {
-    "username": "<логин>",
-    "password": "<пароль>"
+"username": "testUser1",
+"email": "testUser1@yandex.ru",
+"bio": "I am testUser1"
+
 }
 ```
 Подробный список всех запросов и примеры ответов в техническом задании (см. ниже)
@@ -70,4 +73,6 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
+Илья Валеев
 Дмитрий Кирсанов
+Александр Лахтюк
